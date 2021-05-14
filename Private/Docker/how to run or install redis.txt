@@ -1,0 +1,39 @@
+how to install container
+------------------------
+open terminal
+download redis image by run script "docker pull redis" (without doublequote)
+create redis container
+formula:
+docker run --name <redis container name> -p <modified port>:6379<original port> -d redis
+example:
+docker run --name redisaku -p 6379:6379 -d redis
+by default, docker container will running. to check, run script on your terminal "docker ps"
+or, you can check via docker Dashboard
+
+how to stop container
+---------------------
+click docker icon on right above desktop -> choose Dashboard
+click your redis container. if you follow tutorial above, your redis container name is redisaku
+stop redisaku by click stop icon botton
+
+how to run container
+--------------------
+click docker icon on right above desktop -> choose Dashboard
+click your redis container. if you follow tutorial above, your redis container name is redisaku
+start redisaku by click start icon botton
+
+how to access redis local
+-------------------------
+click docker icon on right above desktop -> choose Dashboard
+click your redis container. if you follow tutorial above, your redis container name is redisaku
+go inside redis by click cli icon button
+after redirect to specific terminal, run script "redis-cli"
+have fun
+
+tips:
+-----
+you can also access docker from your visual studio code by install extension Docker
+with exactly extension: @id:ms-azuretools.vscode-docker
+after you install docker extension, click docker icon on left bar vs code
+right click redisaku container
+choose start option

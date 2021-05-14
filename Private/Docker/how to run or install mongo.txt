@@ -1,0 +1,50 @@
+requirement condition
+---------------------
+make sure that you installed Robo 3T
+
+how to install container
+------------------------
+open terminal
+download mongo image by run script "docker pull mongo" (without doublequote)
+create mongo container
+formula:
+docker run -d --name <name your mongo> -p <modified port>:27017<original port> -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=<your password> mongo
+example:
+docker run -d --name mymongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password mongo
+by default, docker container will running. to check, run script on your terminal "docker ps"
+or, you can check via docker Dashboard
+
+how to stop container
+---------------------
+click docker icon on right above desktop -> choose Dashboard
+click your mongo container. if you follow tutorial above, your mongo name is mymongo
+stop mymongo by click stop icon botton
+
+how to start container
+----------------------
+click docker icon on right above desktop -> choose Dashboard
+click your mongo container. if you follow tutorial above, your mongo name is mymongo
+start mymongo by click start icon botton
+
+how to access container via robo 3T
+-----------------------------------
+make sure that mymongo container is running
+open robo 3T
+click mongoDB connection icon
+click Create hyperlink
+in Connection tab, fill name by your own. example, mongo local.
+Make sure that address is localhost, and port is 27017
+in Authentication tab, check Perform authentication
+fill database with admin, username is admin, password is password
+press test button for make sure
+press save button to finish configuration.
+after that, on mongoDB connection list, double click
+have fun
+
+tips:
+-----
+you can also access docker from your visual studio code by install extension Docker
+with exactly extension: @id:ms-azuretools.vscode-docker
+after you install docker extension, click docker icon on left bar vs code
+right click mymongo container
+choose start option
